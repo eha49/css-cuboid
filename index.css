@@ -3,3 +3,33 @@
 *::after {
   box-sizing: border-box;
 }
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: hsl(0 0% 10%);
+  color: hsl(0, 0%, 80%);
+}
+
+.cuboid {
+  --width: 100px;
+  --height: 100px;
+  --depth: 100px;
+  position: relative;
+  width: var(--width);
+  height: var(--height);
+  background-color: hsla(0, 0%, 60%, 0.5);
+}
+
+.cuboid-side {
+  background-color: hsla(0, 0%, 60%, 0.5);
+  border: 1px solid hsl(0, 0%, 80%);
+  position: absolute;
+}
