@@ -25,7 +25,6 @@ body {
   position: relative;
   width: var(--width);
   height: var(--height);
-  background-color: hsla(0, 0%, 60%, 0.5);
   transform: rotateX(24deg) rotateY(32deg);
   transform-style: preserve-3d;
 }
@@ -34,43 +33,56 @@ body {
   background-color: hsla(0, 0%, 60%, 0.5);
   border: 1px solid hsl(0, 0%, 80%);
   position: absolute;
+}
+
+.cuboid-side:nth-of-type(1) {
+  width: var(--width);
+  height: var(--height);
+  transform: translate3d(0, 0, calc(var(--depth) * -1));
+}
+
+.cuboid-side:nth-of-type(2) {
   width: var(--width);
   height: var(--height);
 }
 
-.cuboid-side:nth-of-type(1) {
-  transform: translate3d(0, 0, calc(var(--depth) * -1));
-}
-
-.cuboid-side:nth-of-type(3) {
-  transform: rotateY(90deg)
+.cuboid-side:nth-of-type(3),
+.cuboid-side:nth-of-type(4) {
+  width: var(--depth);
+  height: var(--height);
+  left: 50%;
+  transform: translate(-50%, 0) rotateY(90deg)
     translate3d(
-      calc(var(--width) * 0.5),
+      calc(var(--depth) * 0.5),
       0,
-      calc(var(--depth) * -0.5)
+      calc(var(--width) * -0.5)
     );
 }
 
 .cuboid-side:nth-of-type(4) {
-  transform: rotateY(-90deg)
+  transform: translate(-50%, 0) rotateY(-90deg)
     translate3d(
-      calc(var(--width) * -0.5),
+      calc(var(--depth) * -0.5),
       0,
-      calc(var(--depth) * -0.5)
+      calc(var(--width) * -0.5)
     );
 }
 
-.cuboid-side:nth-of-type(5) {
-  transform: rotateX(-90deg)
+.cuboid-side:nth-of-type(5),
+.cuboid-side:nth-of-type(6) {
+  width: var(--width);
+  height: var(--depth);
+  top: 50%;
+  transform: translate(0, -50%) rotateX(-90deg)
     translate3d(
       0,
-      calc(var(--depth) * 0.5) 0,
+      calc(var(--depth) * 0.5),
       calc(var(--height) * -0.5)
     );
 }
 
 .cuboid-side:nth-of-type(6) {
-  transform: rotateX(90deg)
+  transform: translate(0, -50%) rotateX(90deg)
     translate3d(
       0,
       calc(var(--depth) * -0.5),
