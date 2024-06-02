@@ -19,9 +19,9 @@ body {
 }
 
 .cuboid {
-  --width: 100px;
-  --height: 100px;
-  --depth: 100px;
+  --width: 20vmin;
+  --height: 20vmin;
+  --depth: 20vmin;
   position: relative;
   width: var(--width);
   height: var(--height);
