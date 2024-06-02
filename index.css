@@ -26,10 +26,40 @@ body {
   width: var(--width);
   height: var(--height);
   background-color: hsla(0, 0%, 60%, 0.5);
+  transform: rotateX(24deg) rotateY(32deg);
+  transform-style: preserve-3d;
 }
 
 .cuboid-side {
   background-color: hsla(0, 0%, 60%, 0.5);
   border: 1px solid hsl(0, 0%, 80%);
   position: absolute;
+}
+
+.cuboid-side:nth-of-type(1) {
+  width: var(--width);
+  height: var(--height);
+  transform: translate3d(0, 0, calc(var(--depth) * -1));
+}
+
+.cuboid-side:nth-of-type(3) {
+  width: var(--width);
+  height: var(--height);
+  transform: rotateY(90deg)
+    translate3d(
+      calc(var(--width) * 0.5),
+      0,
+      calc(var(--depth) * -0.5)
+    );
+}
+
+.cuboid-side:nth-of-type(4) {
+  width: var(--width);
+  height: var(--height);
+  transform: rotateY(-90deg)
+    translate3d(
+      calc(var(--width) * -0.5),
+      0,
+      calc(var(--depth) * -0.5)
+    );
 }
